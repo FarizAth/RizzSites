@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Project | Contact RizzSites</title>
+<meta name="description" content="Start a project with RizzSites. Tell us about your business and what you need, and we'll follow up within one business day.">
+<link rel="canonical" href="https://rizzsites.com/contact/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Start a Project | RizzSites">
+<meta property="og:description" content="Tell us about your business and what you need.">
+<meta property="og:url" content="https://rizzsites.com/contact/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/animations.css">
+<link rel="stylesheet" href="/css/responsive.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://rizzsites.com/"},
+    {"@type":"ListItem","position":2,"name":"Contact","item":"https://rizzsites.com/contact/"}
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="page-transition" id="pageTransition"></div>
+<div id="cursor-root"></div>
 
+<header id="site-header"></header>
+<div id="mobile-menu-root"></div>
+
+<main id="main">
+  <section class="page-hero" style="padding-bottom: var(--space-6)">
+    <div class="container-wide">
+      <p class="eyebrow">Start a Project</p>
+      <h1>Tell us about your business.</h1>
+      <p class="lede">Fill this out and we'll follow up within one business day with next steps.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container-wide">
+      <h2 class="visually-hidden">Contact details and project form</h2>
+      <div class="contact-grid">
+        <div class="contact-side" data-reveal="left">
+          <div class="side-block">
+            <h4>Email</h4>
+            <a href="mailto:hello@rizzsites.com">hello@rizzsites.com</a>
+          </div>
+          <div class="side-block">
+            <h4>Response time</h4>
+            <p class="body-muted">Within one business day, usually sooner.</p>
+          </div>
+          <div class="side-block">
+            <h4>Not ready to fill out a form?</h4>
+            <p class="body-muted">Email us directly with a couple lines about your business and we'll take it from there.</p>
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-form" data-reveal="right" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+              <span class="field-error">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <span class="field-error">Please enter a valid email.</span>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="business">Business Name</label>
+              <input type="text" id="business" name="business" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="website">Current Website</label>
+              <input type="text" id="website" name="website" placeholder="If you have one">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="budget">Budget</label>
+              <select id="budget" name="budget" required>
+                <option value="" disabled selected>Select a range</option>
+                <option value="under-2500">Under $2,500</option>
+                <option value="2500-5000">$2,500 &ndash; $5,000</option>
+                <option value="5000-10000">$5,000 &ndash; $10,000</option>
+                <option value="10000-plus">$10,000+</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+              <span class="field-error">Please select a budget range.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="need">What do you need?</label>
+            <select id="need" name="need" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="new-website">A new website</option>
+              <option value="redesign">A redesign of my current site</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+            <span class="field-error">Please let us know what you need.</span>
+          </div>
+
+          <div class="field">
+            <label for="details">Additional Details</label>
+            <textarea id="details" name="details" placeholder="Anything else that would help us understand the project"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Start a Project</button>
+          <div class="form-status" id="formStatus" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script type="module">
+  import { initPage } from '/js/main.js';
+  initPage('contact');
+</script>
+</body>
+</html>
