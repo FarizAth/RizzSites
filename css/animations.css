@@ -1,0 +1,86 @@
+/* =========================================================
+   RizzSites — Motion
+   Scroll reveals, keyframes, magnetic buttons, page transitions.
+   All patterns respect prefers-reduced-motion.
+   ========================================================= */
+
+@keyframes spin{ to{ transform: rotate(360deg); } }
+@keyframes shimmer{ 0%{ background-position: 200% 0; } 100%{ background-position: -200% 0; } }
+@keyframes fadeIn{ from{ opacity: 0; } to{ opacity: 1; } }
+@keyframes floatSlow{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+@keyframes pulseDot{
+  0%, 100%{ opacity: 1; } 50%{ opacity: 0.35; }
+}
+
+/* ---- Scroll reveal (JS toggles .is-visible on intersection) ---- */
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 800ms var(--ease), transform 800ms var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal].is-visible{ opacity: 1; transform: translateY(0); }
+
+[data-reveal="fade"]{ transform: none; }
+[data-reveal="scale"]{ transform: scale(0.96); }
+[data-reveal="scale"].is-visible{ transform: scale(1); }
+[data-reveal="left"]{ transform: translateX(-32px); }
+[data-reveal="left"].is-visible{ transform: translateX(0); }
+[data-reveal="right"]{ transform: translateX(32px); }
+[data-reveal="right"].is-visible{ transform: translateX(0); }
+
+/* Stagger children automatically via JS-assigned --reveal-delay */
+
+/* ---- Text reveal (headline mask) ---- */
+.text-reveal{ overflow: hidden; display: block; }
+.text-reveal-inner{
+  display: block;
+  transform: translateY(110%);
+  transition: transform 900ms var(--ease);
+}
+.text-reveal.is-visible .text-reveal-inner{ transform: translateY(0); }
+
+/* ---- Hero float ---- */
+.floaty{ animation: floatSlow 6s ease-in-out infinite; }
+
+/* ---- Magnetic buttons (JS applies transform via inline style; this just eases it) ---- */
+.magnetic{ transition: transform 350ms var(--ease-soft); will-change: transform; }
+
+/* ---- Page transition overlay ---- */
+.page-transition{
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: var(--bg);
+  transform: translateY(100%);
+  pointer-events: none;
+}
+.page-transition.is-active{
+  transition: transform 480ms var(--ease-soft);
+  transform: translateY(0);
+}
+.page-transition.is-leaving{
+  transition: transform 480ms var(--ease-soft) 60ms;
+  transform: translateY(-100%);
+}
+
+/* ---- Loading spinner already defined in style.css via .spinner ---- */
+
+/* ---- Hover-driven tilt handled inline via JS transform on .browser-frame ---- */
+
+/* ---- Reduced motion: neutralize everything meaningfully ---- */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal]{ opacity: 1 !important; transform: none !important; }
+  .text-reveal-inner{ transform: none !important; }
+  .floaty{ animation: none !important; }
+  .page-transition{ display: none !important; }
+}

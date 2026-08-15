@@ -1,0 +1,114 @@
+/* =========================================================
+   RizzSites — Responsive
+   Intentional layouts per breakpoint, not a naive shrink.
+   ========================================================= */
+
+/* ---- Large desktop polish ---- */
+@media (min-width: 1600px){
+  :root{ --container-wide: 1520px; --container: 1320px; }
+}
+
+/* ---- Laptop / small desktop ---- */
+@media (max-width: 1280px){
+  .feature-grid{ grid-template-columns: repeat(3, 1fr); }
+  .industry-grid{ grid-template-columns: repeat(4, 1fr); }
+  .hero-visual{ height: 480px; }
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 1024px){
+  :root{ --nav-h: 72px; }
+  .nav-links{ display: none; }
+  .nav-toggle{ display: flex; }
+
+  .hero-grid{ grid-template-columns: 1fr; gap: var(--space-8); }
+  .hero-visual{ height: 420px; order: -1; }
+  .hero-copy .lede{ max-width: 60ch; }
+  .hero-meta{ gap: var(--space-6); }
+
+  .featured-card{ grid-template-columns: 1fr; }
+  .featured-card:nth-child(even){ direction: ltr; }
+
+  .feature-grid{ grid-template-columns: repeat(2, 1fr); }
+  .industry-grid{ grid-template-columns: repeat(3, 1fr); }
+  .project-grid{ grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+
+  .service-row{ grid-template-columns: 44px 1fr; }
+  .service-row p{ grid-column: 2; }
+  .service-row .arrow-icon{ display: none; }
+
+  .process-step{ grid-template-columns: 70px 1fr; gap: var(--space-5); }
+
+  .contact-grid{ grid-template-columns: 1fr; gap: var(--space-8); }
+  .footer-top{ grid-template-columns: 1.2fr 1fr 1fr; }
+
+  .cursor-dot, .cursor-ring{ display: none; }
+  body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button{ cursor: auto; }
+}
+
+/* ---- Mobile (large) ---- */
+@media (max-width: 768px){
+  :root{ --nav-h: 64px; --space-9: 64px; --space-10: 80px; }
+
+  .section{ padding-block: var(--space-8); }
+  .section-head{ flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+
+  h1, .h1{ font-size: clamp(2.2rem, 9vw, 3rem); }
+  h2, .h2{ font-size: clamp(1.7rem, 7vw, 2.2rem); }
+
+  .hero{ padding-top: calc(var(--nav-h) + var(--space-5)); }
+  .hero-visual{ height: 320px; }
+  .hero-badge{ left: 0; bottom: -14px; max-width: 180px; padding: var(--space-3) var(--space-4); }
+  .hero-actions{ flex-direction: column; align-items: stretch; }
+  .hero-actions .btn{ width: 100%; }
+  .hero-meta{ flex-wrap: wrap; gap: var(--space-5); }
+
+  .feature-grid{ grid-template-columns: 1fr; }
+  .industry-grid{ grid-template-columns: repeat(2, 1fr); }
+  .project-grid{ grid-template-columns: 1fr; }
+
+  .filter-bar{ flex-wrap: nowrap; overflow-x: auto; padding-bottom: var(--space-2); -webkit-overflow-scrolling: touch; }
+  .filter-bar::-webkit-scrollbar{ display: none; }
+  .filter-btn{ flex-shrink: 0; }
+
+  .strip{ flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+  .strip-items{ gap: var(--space-5); font-size: 0.95rem; }
+
+  .field-row{ grid-template-columns: 1fr; gap: 0; }
+  .footer-top{ grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  .footer-brand{ grid-column: 1 / -1; }
+  .footer-bottom{ flex-direction: column; align-items: flex-start; }
+
+  .related-grid{ grid-template-columns: 1fr; }
+  .project-detail-head{ flex-direction: column; }
+  .project-meta-row{ gap: var(--space-5); }
+
+  .cta-band{ padding: var(--space-8) var(--space-5); }
+}
+
+/* ---- Mobile (small) ---- */
+@media (max-width: 430px){
+  :root{ --gutter: 20px; }
+  .btn{ padding: 14px 22px; font-size: 0.9rem; }
+  .hero-meta{ gap: var(--space-4); }
+  .hero-meta-item .num{ font-size: 1.5rem; }
+  .process-step{ grid-template-columns: 1fr; gap: var(--space-3); }
+  .process-step .step-num{ font-size: 2.2rem; }
+  .service-row{ grid-template-columns: 1fr; }
+  .service-row .idx{ margin-bottom: var(--space-2); }
+  .industry-grid{ grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .mobile-menu a{ font-size: clamp(1.8rem, 11vw, 2.4rem); }
+}
+
+/* ---- Fine pointer only: hover interactions ---- */
+@media (hover: none){
+  .project-card:hover{ transform: none; }
+  .feature-card:hover{ transform: none; }
+}
+
+@media (max-width: 768px){
+  .process-mini{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 430px){
+  .process-mini{ grid-template-columns: 1fr; }
+}
