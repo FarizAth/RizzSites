@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | RizzSites</title>
+<meta name="description" content="The page you're looking for doesn't exist.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/animations.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="cursor-root"></div>
+<header id="site-header"></header>
+<div id="mobile-menu-root"></div>
+
+<main id="main">
+  <div class="state-page">
+    <div class="container">
+      <p class="code mono">404</p>
+      <h1>This page doesn't exist.</h1>
+      <p>The page you're looking for may have moved or the link might be off. Try the homepage or browse our work instead.</p>
+      <div class="hero-actions">
+        <a href="/" class="btn btn-primary magnetic">Go Home</a>
+        <a href="/work/" class="btn btn-outline magnetic">View Our Work</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script type="module">
+  import { renderHeader, renderFooter, initNavBehavior } from '/js/navigation.js';
+  import { initCursor } from '/js/cursor.js';
+  import { initMagnetic } from '/js/animations.js';
+  renderHeader('');
+  renderFooter();
+  initNavBehavior();
+  initCursor();
+  initMagnetic();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "RizzSites",
+  "short_name": "RizzSites",
+  "description": "Premium website design and development for businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C0D10",
+  "theme_color": "#0C0D10",
+  "icons": [
+    {
+      "src": "/assets/favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
