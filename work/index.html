@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work | 23 Websites We've Built | RizzSites</title>
+<meta name="description" content="Browse the full RizzSites portfolio: 23 live websites across HVAC, plumbing, construction, auto, fitness, organizing, and restaurants, plus spec work.">
+<link rel="canonical" href="https://rizzsites.com/work/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Work | RizzSites Portfolio">
+<meta property="og:description" content="23 live websites we've designed and built for real businesses.">
+<meta property="og:url" content="https://rizzsites.com/work/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/animations.css">
+<link rel="stylesheet" href="/css/responsive.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://rizzsites.com/"},
+    {"@type":"ListItem","position":2,"name":"Work","item":"https://rizzsites.com/work/"}
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="page-transition" id="pageTransition"></div>
+<div id="cursor-root"></div>
 
+<header id="site-header"></header>
+<div id="mobile-menu-root"></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container-wide">
+      <p class="eyebrow">Work</p>
+      <h1>Every project, in one place.</h1>
+      <p class="lede">23 live websites across seven industries, plus original spec work. Filter by industry or scroll through everything.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container-wide">
+      <h2 class="visually-hidden">All portfolio projects</h2>
+      <div class="filter-bar" id="filterBar" role="group" aria-label="Filter projects by industry"></div>
+      <div class="project-grid" id="workGrid" data-reveal-group></div>
+      <div id="workEmpty" class="text-center" style="padding: var(--space-9) 0" hidden>
+        <h3>No projects in this category yet.</h3>
+        <p class="body-muted" style="margin-top: var(--space-3)">Try another filter above.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide">
+      <div class="cta-band" data-reveal="scale">
+        <p class="eyebrow" style="justify-content:center">Your Business Could Be Next</p>
+        <h2>Let's build your website.</h2>
+        <p class="lede">Tell us what you do and we'll take it from there.</p>
+        <div class="hero-actions">
+          <a href="/contact/" class="btn btn-primary magnetic">Start a Project</a>
+          <a href="/services/" class="btn btn-outline magnetic">See Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script type="module">
+  import { initPage } from '/js/main.js';
+  initPage('work');
+</script>
+</body>
+</html>
